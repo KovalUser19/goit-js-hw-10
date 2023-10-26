@@ -8,23 +8,21 @@ const ref = {
   loader: document.querySelector('.loader'),
   error: document.querySelector('.error'),
 }
+
 ref.error.classList.add('is-hidden')
-ref.loader.classList.add('is-hidden')
+ref.loader.classList.replace('loader','is-hidden')
 ref.catInfo.classList.add('is-hidden')
 
 ref.select.addEventListener('change', handler)
 function handler(evt) {
-ref.loader.classList.remove('is-hidden')
-/* ref.select.classList.add('is-hidden')
- */
-
+  ref.loader.classList.replace('is-hidden', 'loader')
+  ref.catInfo.classList.add('is-hidden')
+  ref.select.classList.add('is-hidden')
 const breedId = evt.target.value;
 
  fetchCatByBreed(breedId)
    .then((data) => {
-
-   /* ref.select.classList.remove('is-hidden') */
-    ref.loader.classList.add('is-hidden')
+    ref.loader.classList.replace('loader','is-hidden')
     ref.catInfo.classList.remove('is-hidden')
     const { breeds, url } = data[0];
 
