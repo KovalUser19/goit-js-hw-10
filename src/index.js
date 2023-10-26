@@ -12,7 +12,6 @@ const ref = {
 ref.error.classList.add('is-hidden')
 ref.loader.classList.replace('is-hidden','loader')
 ref.select.classList.add('is-hidden')
-/* ref.catInfo.classList.add('is-hidden') */
 
 ref.select.addEventListener('change', handler)
 function handler(evt) {
