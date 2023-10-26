@@ -42,6 +42,7 @@ function createMarkupSelect (arr) {
 fetchBreeds()
   .then((data) => {
     ref.select.classList.remove('is-hidden')
+     ref.loader.classList.replace('loader','is-hidden')
     console.log(data);
     ref.select.insertAdjacentHTML('afterbegin', createMarkupSelect(data))
     new SlimSelect({
