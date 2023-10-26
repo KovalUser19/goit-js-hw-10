@@ -9,15 +9,15 @@ const ref = {
   error: document.querySelector('.error'),
 }
 
-ref.error.classList.add('is-hidden')
-ref.loader.classList.replace('is-hidden','loader')
-ref.select.classList.add('is-hidden')
+ref.error.classList.add('is-hidden');
+ref.loader.classList.replace('is-hidden', 'loader');
+ref.select.classList.add('is-hidden');
 
 ref.select.addEventListener('change', handler)
 function handler(evt) {
-  ref.loader.classList.replace('is-hidden', 'loader')
-  ref.catInfo.classList.add('is-hidden')
-  ref.select.classList.add('is-hidden')
+  ref.loader.classList.replace('is-hidden', 'loader');
+  ref.catInfo.classList.add('is-hidden');
+  ref.select.classList.add('is-hidden');
 const breedId = evt.target.value;
 
  fetchCatByBreed(breedId)
