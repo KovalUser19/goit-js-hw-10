@@ -10,8 +10,9 @@ const ref = {
 }
 
 ref.error.classList.add('is-hidden')
-ref.loader.classList.replace('loader','is-hidden')
-ref.catInfo.classList.add('is-hidden')
+ref.loader.classList.replace('is-hidden','loader')
+ref.select.classList.add('is-hidden')
+/* ref.catInfo.classList.add('is-hidden') */
 
 ref.select.addEventListener('change', handler)
 function handler(evt) {
@@ -41,6 +42,7 @@ function createMarkupSelect (arr) {
 
 fetchBreeds()
   .then((data) => {
+    ref.select.classList.remove('is-hidden')
     console.log(data);
     ref.select.insertAdjacentHTML('afterbegin', createMarkupSelect(data))
     new SlimSelect({
@@ -52,6 +54,6 @@ fetchBreeds()
 function onFetchError() {
   ref.loader.classList.add('is-hidden')
   ref.select.classList.add('is-hidden')
-  ref.error.classList.toggle('is-hidden')
+  ref.error.classList.add('is-hidden')
   Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!');
   }
